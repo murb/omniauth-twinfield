@@ -1,6 +1,6 @@
 # Omniauth Twinfield Strategy
 
-An OmniAuth Strategy for Twinfield, a bookkeeping package.
+An very minimal OmniAuth Strategy for Twinfield, a bookkeeping package.
 
 ## Installation
 
