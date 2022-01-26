@@ -1,6 +1,6 @@
 # Omniauth Twinfield Strategy
 
-An very minimal OmniAuth Strategy for Twinfield, a bookkeeping package.
+An very minimal OmniAuth Strategy for Twinfield, a bookkeeping package. This package just does authentication, when you need to interface with the contents of the Twinfield package try the [twinfield](https://github.com/murb/twinfield)-gem.
 
 ## Installation
 
