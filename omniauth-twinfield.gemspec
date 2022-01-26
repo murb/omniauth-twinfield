@@ -3,15 +3,15 @@
 require_relative "lib/omniauth/twinfield/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "omniauth-twinfield"
-  spec.version       = Omniauth::Twinfield::VERSION
-  spec.authors       = ["murb"]
-  spec.email         = ["git@murb.nl"]
+  spec.name = "omniauth-twinfield"
+  spec.version = Omniauth::Twinfield::VERSION
+  spec.authors = ["murb"]
+  spec.email = ["git@murb.nl"]
 
-  spec.summary       = "A Twinfield strategy for OmniAuth"
-  spec.description   = "An OmniAuth strategy for Twinfield, bookkeeping package from Kluwers"
-  spec.homepage      = "https://gitlab.com/murb-org/omniauth-twinfield"
-  spec.license       = "MIT"
+  spec.summary = "A Twinfield strategy for OmniAuth"
+  spec.description = "An OmniAuth strategy for Twinfield, bookkeeping package from Kluwers"
+  spec.homepage = "https://gitlab.com/murb-org/omniauth-twinfield"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -25,8 +25,8 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem

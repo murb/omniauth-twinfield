@@ -35,7 +35,7 @@ module OmniAuth
       }
 
       def request_phase
-        redirect client.auth_code.authorize_url({ redirect_uri: callback_url }.merge(authorize_params))
+        redirect client.auth_code.authorize_url({redirect_uri: callback_url}.merge(authorize_params))
       end
 
       def uid
@@ -60,7 +60,7 @@ module OmniAuth
         data = {
           headers: authorization_header,
           code: verifier,
-          redirect_uri: callback_url.split(/\?/)[0],
+          redirect_uri: callback_url.split("?")[0],
           grant_type: "authorization_code"
         }
 
@@ -71,8 +71,7 @@ module OmniAuth
 
       def authorization_header
         {
-          "Authorization" => "Basic #{Base64.encode64("#{options.client_id}:#{options.client_secret}").gsub("\n",
-                                                                                                            "")}",
+          "Authorization" => "Basic #{Base64.encode64("#{options.client_id}:#{options.client_secret}").delete("\n")}",
           "User-Agent" => "Twinfield OmniAuth"
         }
       end
@@ -88,9 +87,11 @@ module OmniAuth
 
           response = JSON.parse(http_response.body)
 
-          raise InvalidToken, response["Message"] if response["Message"]
-
-          response
+          if response["Message"]
+            raise InvalidToken, response["Message"]
+          else
+            response
+          end
         end
       end
     end
